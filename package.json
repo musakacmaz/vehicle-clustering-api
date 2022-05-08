@@ -1,0 +1,57 @@
+{
+  "name": "vehicle-clustering-api",
+  "version": "1.0.0",
+  "description": "Vehicle Clustering API.",
+  "main": "app.ts",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest --coverage",
+    "start": "npm run build:ts && fastify start -l info dist/app.js",
+    "start:dev": "docker-compose up -d && nodemon",
+    "build:ts": "tsc",
+    "dev": "tsc && concurrently -k -p \"[{name}]\" -n \"TypeScript,App\" -c \"yellow.bold,cyan.bold\" \"tsc -w\" \"fastify start --ignore-watch=.ts$ -w -l info -P dist/app.js\"",
+    "lint": "eslint --ignore-path .eslintignore --ext .js,.ts .",
+    "lint:fix": "npm run lint -- --fix",
+    "format": "prettier --ignore-path .prettierignore --write \"**/*.+(js|ts|json)\""
+  },
+  "keywords": [
+    "api",
+    "fastify",
+    "typescript",
+    "nodejs",
+    "docker",
+    "mongodb",
+    "redis"
+  ],
+  "author": "Musa Kacmaz",
+  "license": "MIT",
+  "dependencies": {
+    "@fastify/autoload": "^4.0.1",
+    "@fastify/mongodb": "^5.0.0",
+    "@fastify/redis": "^5.0.0",
+    "@fastify/sensible": "^4.1.0",
+    "@fastify/swagger": "^6.0.1",
+    "axios": "^0.27.2",
+    "fastify": "^3.0.0",
+    "fastify-cli": "^2.15.0",
+    "fastify-plugin": "^3.0.0",
+    "redis": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.5.0",
+    "@types/node": "^17.0.8",
+    "@typescript-eslint/eslint-plugin": "^5.22.0",
+    "@typescript-eslint/parser": "^5.22.0",
+    "concurrently": "^7.0.0",
+    "eslint": "^8.15.0",
+    "fastify-tsconfig": "^1.0.1",
+    "jest": "^28.1.0",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.6.2",
+    "ts-jest": "^28.0.1",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4"
+  }
+}

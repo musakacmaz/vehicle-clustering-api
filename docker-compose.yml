@@ -1,0 +1,20 @@
+version: '3.9'
+services:
+  myapp:
+    container_name: myapp
+    restart: always
+    build: .
+    ports:
+      - '3000:3000'
+    links:
+      - redis
+      - mongo
+  mongo:
+    container_name: myapp-mongo
+    image: 'mongo:4'
+    environment: {
+      AUTH: "no"
+    }
+  redis:
+    container_name: myapp-redis
+    image: redis:alpine
