@@ -16,7 +16,7 @@ const dataFetcherPlugin = async function (fastify: FastifyInstance) {
     const response = await axios
       .get(EXTERNAL_API_URL + '/free-bike-status')
       .catch((err) => {
-        console.log(err);
+        console.error(err);
       });
 
     if (response && response.data) {

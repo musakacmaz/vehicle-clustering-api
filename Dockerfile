@@ -15,7 +15,7 @@ COPY . .
 # Copy .env.docker to workdir/.env - use the docker env
 # COPY .env.docker ./.env
 
-# Expose application ports - (4300 - for API and 4301 - for front end)
+# Expose application ports
 EXPOSE 3000
 
 # Generate build

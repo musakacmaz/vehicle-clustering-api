@@ -53,3 +53,7 @@ export function queryBuilder(
 export function isExpired(expirationDate: number): boolean {
   return Math.floor(Date.now() / 1000) > expirationDate;
 }
+
+export function getTimeToExpire(expirationDate: number): number {
+  return expirationDate - Math.floor(Date.now() / 1000);
+}
