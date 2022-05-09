@@ -43,6 +43,14 @@ Run the following command to run the tests:
 npm run test
 ```
 
+## ✨ Linting
+
+Run the following command to lint the code:
+
+```bash
+npm run lint
+```
+
 ## ⚖️ License
 
 [MIT © musa kaçmaz](https://musakacmaz.mit-license.org)
