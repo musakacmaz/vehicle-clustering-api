@@ -9,11 +9,11 @@ export function queryBuilder(
 ): FilterVehiclesQuery {
   let query: FilterVehiclesQuery = {};
 
-  if (queryString.isReserved) {
+  if (queryString.isReserved !== undefined) {
     query = { ...query, is_reserved: { $eq: queryString.isReserved } };
   }
 
-  if (queryString.isDisabled) {
+  if (queryString.isDisabled !== undefined) {
     query = { ...query, is_disabled: { $eq: queryString.isDisabled } };
   }
 

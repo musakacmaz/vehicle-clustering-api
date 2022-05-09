@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "jest --coverage",
+    "test": "dotenv -e .env.test -- jest --coverage",
     "start": "npm run build:ts && fastify start -l info dist/app.js",
     "start:dev": "docker-compose up --build",
     "build:ts": "tsc",
@@ -33,14 +33,17 @@
     "@fastify/sensible": "^4.1.0",
     "@fastify/swagger": "^6.0.1",
     "axios": "^0.27.2",
+    "dotenv": "^16.0.0",
     "fastify": "^3.0.0",
     "fastify-cli": "^2.15.0",
     "fastify-plugin": "^3.0.0",
+    "mongodb-memory-server": "^8.5.2",
     "redis": "^4.1.0"
   },
   "devDependencies": {
     "@types/jest": "^27.5.0",
     "@types/node": "^17.0.8",
+    "@types/redis-mock": "^0.17.1",
     "@typescript-eslint/eslint-plugin": "^5.22.0",
     "@typescript-eslint/parser": "^5.22.0",
     "concurrently": "^7.0.0",
@@ -49,6 +52,7 @@
     "jest": "^28.1.0",
     "nodemon": "^2.0.15",
     "prettier": "^2.6.2",
+    "redis-mock": "^0.56.3",
     "ts-jest": "^28.0.1",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.4"

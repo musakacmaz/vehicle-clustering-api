@@ -8,8 +8,10 @@ const redis = createClient({
 
 redis.on('error', (err) => console.error('Redis Error!', err));
 
-(async () => {
-  await redis.connect();
-})();
+if (process.env.NODE_ENV !== 'test') {
+  (async () => {
+    await redis.connect();
+  })();
+}
 
 export default redis;
