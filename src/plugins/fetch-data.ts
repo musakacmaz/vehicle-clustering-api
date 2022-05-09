@@ -1,9 +1,9 @@
 import axios from 'axios';
 import { FastifyInstance } from 'fastify';
 import fp from 'fastify-plugin';
-import redis from '../config/redis';
+import redis from '../configs/redis';
 import { Bike } from '../models/vehicle';
-import { EXTERNAL_API_URL } from '../config';
+import { EXTERNAL_API_URL } from '../configs';
 import { isExpired } from '../helpers';
 
 const dataFetcherPlugin = async function (fastify: FastifyInstance) {

@@ -1,4 +1,4 @@
-import { MAX_DISTANCE } from '../config';
+import { MAX_DISTANCE } from '../configs';
 import {
   FilterVehiclesQueryParams,
   FilterVehiclesQuery,

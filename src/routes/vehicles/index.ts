@@ -3,7 +3,7 @@ import { filterVehiclesSchema } from '../../schemas/vehicle';
 import { FilterVehiclesQueryParams } from '../../models/vehicle';
 import fetchAndInsertData from '../../plugins/fetch-data';
 import { getTimeToExpire, isExpired, queryBuilder } from '../../helpers';
-import redis from '../../config/redis';
+import redis from '../../configs/redis';
 
 const vehicles: FastifyPluginAsync = async (fastify): Promise<void> => {
   fastify.get(

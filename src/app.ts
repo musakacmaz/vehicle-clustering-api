@@ -3,8 +3,8 @@ import AutoLoad, { AutoloadPluginOptions } from '@fastify/autoload';
 import Swagger from '@fastify/swagger';
 import { fastifyMongodb } from '@fastify/mongodb';
 import { FastifyPluginAsync } from 'fastify';
-import { swaggerOptions } from './config/swagger';
-import { NODE_ENV, DB_URL } from './config';
+import { swaggerOptions } from './configs/swagger';
+import { NODE_ENV, DB_URL } from './configs';
 
 export type AppOptions = {
   // Place your custom options for app below here.
